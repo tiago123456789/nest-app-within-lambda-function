@@ -1,0 +1,18 @@
+service: app-nest-within-lambda
+
+plugins:
+ - 'serverless-plugin-typescript'
+ - serverless-plugin-optimize
+ - serverless-offline
+
+provider:
+ name: aws
+ runtime: nodejs12.x
+
+functions:
+ main: 
+   handler: src/lambda.handler
+   events:
+     - http:
+         method: any
+         path: /{any+}
