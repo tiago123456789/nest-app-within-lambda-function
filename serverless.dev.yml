@@ -5,14 +5,14 @@ provider:
   runtime: nodejs12.x
 
 plugins:
-  # - 'serverless-plugin-typescript'
-  # - serverless-plugin-optimize
+  - 'serverless-plugin-typescript'
+  - serverless-plugin-optimize
   - serverless-offline
 
 
 functions:
   main: 
-    handler: build/lambda.handler
+    handler: src/lambda.handler
     events:
       - http:
           method: any

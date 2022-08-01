@@ -6,6 +6,8 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
+    "lambda:start:deploy": "npm run build && cat ./serverless.deploy.yml > ./serverless.yml && serverless deploy",
+    "lambda:start:dev": "cat ./serverless.dev.yml > ./serverless.yml && serverless offline start",
     "prebuild": "rimraf dist",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",

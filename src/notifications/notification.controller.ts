@@ -7,7 +7,7 @@ export class NotificationController {
 
   @Post('/welcome')
   @HttpCode(200)
-  async welcome(@Body() data: any) {
+  async welcome(@Body() data: any): Promise<any> {
     return this.mailerService.sendMail({
       to: data.email,
       from: 'noreply@nestjs.com',
